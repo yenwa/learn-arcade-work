@@ -12,11 +12,11 @@ def main():
 
     done = False
 
-    miles_traveled = 0
+    miles_traveled = 30
     thirst = 0
     camel_tiredness = 0
-    natives_distance_traveled = -15
-    drinks_in_the_canteen = 20
+    natives_distance_traveled = 15
+    drinks_in_the_canteen = 4
     miles_between = 0
 
 
@@ -33,6 +33,7 @@ def main():
             print('Miles traveled: ', miles_traveled, '\ndrinks in the canteen: ', drinks_in_the_canteen, '\nThe natives are ', miles_between, 'miles behind you.')
         elif user_input.upper() == 'D':
             print('the camel is happy')
+            camel_tiredness = 0
 
             for natives_distance_traveled_1 in random.choices(range(7, 16)):
                 natives_distance_traveled = natives_distance_traveled + natives_distance_traveled_1
@@ -83,14 +84,13 @@ def main():
         if miles_traveled >= 200:
             done = True
             print('You won')
-        if miles_between <= 0:
-
+        if miles_traveled - natives_distance_traveled <= 0:
             done = True
             print('Game over the native caught up !')
 
 # I'm kind of confused here I need to find out why
 
-        if miles_between in random.choices(range(1, 16)):
+        if miles_traveled - natives_distance_traveled < 15:
                 print('The natives are getting close ')
 
 
