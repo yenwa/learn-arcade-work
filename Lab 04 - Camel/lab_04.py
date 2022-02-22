@@ -88,7 +88,6 @@ def main():
             done = True
             print('Game over the native caught up !')
 
-# I'm kind of confused here I need to find out why
 
         if miles_traveled - natives_distance_traveled < 15:
                 print('The natives are getting close ')
