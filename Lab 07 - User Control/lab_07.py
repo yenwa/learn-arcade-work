@@ -60,12 +60,13 @@ class MyGame(arcade.Window):
         # Call the parent class's init function
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "flip-cart")
         self.background = arcade.load_texture('background.png')
-        # Create a list for the balls
 
+
+        # Create a list for the balls
 
         self.ball = Ball(20, 50, 3, 3, 15, arcade.color.BRIGHT_PINK)
 
-        self.roll = Ball(50, 70, 2, 4, 16, arcade.color.GO_GREEN)
+        #self.ball_1 = Ball(50, 70, 2, 4, 16, arcade.color.GO_GREEN)
 
 
 
@@ -80,11 +81,11 @@ class MyGame(arcade.Window):
         arcade.draw_texture_rectangle(400, 300,
                                       SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
         self.ball.draw()
-        self.roll.draw()
+        #self.ball_1.draw()
 
     def update(self, delta_time):
             self.ball.update()
-            self.roll.update()
+            #self.ball_1.update()
 
    # define keyboard input
 
@@ -122,15 +123,14 @@ class MyGame(arcade.Window):
         if key == arcade.key.DOWN:
             arcade.play_sound(self.down_sound)
 
-    def on_mouse_motion(self, x, y, dx, dy):
+    #def on_mouse_motion(self, x, y, dx, dy):
         """ Called to update our objects.
         Happens approximately 60 times per second."""
-        self.roll.position_x = x
-        self.roll.position_y = y
+        #self.ball_1.position_x = x
+        #self.ball_1.position_y = y
 
     def on_mouse_press(self, x, y, button, modifiers):
         """ Called when the user presses a mouse button. """
-
         if button == arcade.MOUSE_BUTTON_LEFT:
             arcade.play_sound(self.mouse_press_left)
         elif button == arcade.MOUSE_BUTTON_RIGHT:
